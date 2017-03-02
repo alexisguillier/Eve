@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -20,6 +22,7 @@ public class AccountActivity extends AppCompatActivity {
     EditText mailAccount;
     EditText passwordAccount;
     EditText passwordConfirmAccount;
+    Spinner accountStatus;
 
     Session session;
     User user;
@@ -28,11 +31,9 @@ public class AccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-
         session = new Session(getApplicationContext());
         session.checkLogin();
         user = session.getUser();
-
         returnAccountButton = (Button) findViewById(R.id.returnAccount);
         updateAccountButton = (Button) findViewById(R.id.editAccount);
 
@@ -41,6 +42,11 @@ public class AccountActivity extends AppCompatActivity {
         mailAccount = (EditText) findViewById(R.id.emailEdit);
         passwordAccount = (EditText) findViewById(R.id.passwordEdit);
         passwordConfirmAccount = (EditText) findViewById(R.id.passwordEditConfirm);
+        accountStatus = (Spinner) findViewById(R.id.accountStatus);
+
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, SignActivity.STATUS_ARRAY); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        accountStatus.setAdapter(spinnerArrayAdapter);
 
         if(user != null){
             firstNameAccount.setText(user.getFirstName());
@@ -63,6 +69,7 @@ public class AccountActivity extends AppCompatActivity {
                         user.setLastName(secondNameAccount.getText().toString());
                         user.setEmail(mailAccount.getText().toString());
                         user.setPassword(passwordAccount.getText().toString());
+                        user.setStatus(accountStatus.getSelectedItemPosition());
                         user.save();
                         text = "Account updated";
                         session.createSession(user.getId(), user.getFirstName(), user.getLastName());
@@ -78,7 +85,6 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-
         returnAccountButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent myIntent = new Intent(getApplicationContext(), EventsActivity.class);
@@ -87,10 +93,6 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
-
-
 
 }

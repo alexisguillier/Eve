@@ -14,18 +14,19 @@ public class User extends SugarRecord {
     private boolean isContributor;
     private String email;
     private String password;
-
+    private int status;
 
     public User(){
 
     }
 
-    public User(String fn, String ln, boolean ic, String m, String pwd) {
+    public User(String fn, String ln, boolean ic, String m, String pwd, int s) {
         this.firstName = fn;
         this.lastName = ln;
         this.isContributor = ic;
         this.email = m;
         this.password = pwd;
+        this.status = s;
     }
 
     public void setFirstName(String fn)
@@ -71,6 +72,15 @@ public class User extends SugarRecord {
     public String getPassword()
     {
         return this.password;
+    }
+
+    public void setStatus(int s)
+    {
+        this.status = s;
+    }
+    public int getStatus()
+    {
+        return this.status;
     }
 
 }

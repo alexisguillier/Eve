@@ -32,37 +32,6 @@
         android:layout_below="@+id/firstNameEdit"
         android:layout_alignStart="@+id/firstNameEdit" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/emailEdit"
-        android:text="Email"
-        android:layout_below="@+id/secondNameEdit"
-        android:layout_alignStart="@+id/secondNameEdit"
-        android:layout_marginTop="44dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_marginTop="18dp"
-        android:id="@+id/passwordEdit"
-        android:layout_below="@+id/emailEdit"
-        android:layout_alignStart="@+id/emailEdit" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/passwordEditConfirm"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/passwordEdit"
-        android:layout_alignStart="@+id/passwordEdit" />
-
     <Button
         android:text="Update"
         android:layout_width="wrap_content"
@@ -79,5 +48,44 @@
         android:layout_alignTop="@+id/editAccount"
         android:layout_alignEnd="@+id/passwordEditConfirm"
         android:id="@+id/returnAccount" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordEditConfirm"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/passwordEdit"
+        android:layout_alignStart="@+id/passwordEdit" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="16dp"
+        android:id="@+id/passwordEdit"
+        android:layout_below="@+id/emailEdit"
+        android:layout_alignStart="@+id/emailEdit" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondNameEdit"
+        android:layout_marginTop="19dp"
+        android:id="@+id/accountStatus"
+        android:layout_alignStart="@+id/secondNameEdit"
+        android:layout_alignEnd="@+id/secondNameEdit" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailEdit"
+        android:text="Email"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/accountStatus" />
 
 </RelativeLayout>

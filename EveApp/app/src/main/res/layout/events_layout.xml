@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/eventImage"
+        android:layout_width="100dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="Property Image"
+        android:layout_height="120dp" />
+
+    <TextView
+        android:text="Title"
+        android:layout_width="wrap_content"
+        android:id="@+id/eventTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/eventImage"
+        android:layout_height="50px"
+        android:autoText="false" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/eventTitle"
+        android:layout_marginTop="14dp"
+        android:layout_alignBottom="@+id/eventImage"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/eventImage">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_weight="0.35"
+                android:layout_height="80px"
+                android:id="@+id/eventDate" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:id="@+id/eventPrice"
+                android:layout_weight="0.32"
+                android:layout_height="80px" />
+        </LinearLayout>
+
+        <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/eventJoin"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</RelativeLayout>

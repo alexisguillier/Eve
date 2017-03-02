@@ -25,7 +25,8 @@
         <activity android:name=".AccountActivity" />
         <activity
             android:name=".SignActivity"
-            android:label="@string/title_activity_sign"></activity>
+            android:label="@string/title_activity_sign" />
+        <activity android:name=".NewEventActivity"></activity>
     </application>
 
 </manifest>
