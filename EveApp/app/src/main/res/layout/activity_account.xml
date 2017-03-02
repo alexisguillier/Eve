@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_account"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="fr.esiee.guillier_marret.eveapp.AccountActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="First Name"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:id="@+id/firstNameEdit" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Second Name"
+        android:ems="10"
+        android:id="@+id/secondNameEdit"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/firstNameEdit"
+        android:layout_alignStart="@+id/firstNameEdit" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailEdit"
+        android:text="Email"
+        android:layout_below="@+id/secondNameEdit"
+        android:layout_alignStart="@+id/secondNameEdit"
+        android:layout_marginTop="44dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="18dp"
+        android:id="@+id/passwordEdit"
+        android:layout_below="@+id/emailEdit"
+        android:layout_alignStart="@+id/emailEdit" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordEditConfirm"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/passwordEdit"
+        android:layout_alignStart="@+id/passwordEdit" />
+
+    <Button
+        android:text="Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editAccount"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/passwordEditConfirm"
+        android:layout_alignStart="@+id/passwordEditConfirm" />
+
+    <Button
+        android:text="Return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editAccount"
+        android:layout_alignEnd="@+id/passwordEditConfirm"
+        android:id="@+id/returnAccount" />
+
+</RelativeLayout>
