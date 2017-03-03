@@ -47,9 +47,6 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.events_layout, null);
-
-        ImageView eventImage = (ImageView) view.findViewById(R.id.eventImage);
-
         TextView eventTitle = (TextView) view.findViewById(R.id.eventTitle);
         TextView eventDate = (TextView) view.findViewById(R.id.eventDate);
         TextView eventPrice = (TextView) view.findViewById(R.id.eventPrice);

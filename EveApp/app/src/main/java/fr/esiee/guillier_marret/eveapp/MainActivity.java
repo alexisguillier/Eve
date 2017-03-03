@@ -43,15 +43,11 @@ public class MainActivity extends AppCompatActivity {
 */
 
         session = new Session(getApplicationContext());
-
-/*
         if(session.isLoggedIn() ){
             Intent myIntent = new Intent(getApplicationContext(), EventsActivity.class);
             startActivity(myIntent);
             finish();
         }
-*/
-
         submitButton = (Button) findViewById(R.id.submit);
         signupButton = (Button) findViewById(R.id.signup);
         id= (EditText) findViewById(R.id.idfield);
