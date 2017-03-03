@@ -1,62 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/eventImage"
-        android:layout_width="100dp"
-        android:layout_marginRight="10dp"
-        android:contentDescription="Property Image"
-        android:layout_height="120dp" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Title"
+            android:layout_width="match_parent"
+            android:id="@+id/eventTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/eventImage"
+            android:layout_alignParentStart="true"
+            android:layout_height="70px"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textAlignment="center"
+            android:typeface="normal"
+            android:autoText="false"
+            android:paddingTop="8dp" />
 
     <TextView
-        android:text="Title"
-        android:layout_width="wrap_content"
-        android:id="@+id/eventTitle"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/eventImage"
-        android:layout_height="50px"
-        android:autoText="false" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+            android:text="Date"
+            android:layout_width="120dp"
+        android:id="@+id/eventDate"
+        android:layout_height="50dp"
         android:layout_below="@+id/eventTitle"
-        android:layout_marginTop="14dp"
-        android:layout_alignBottom="@+id/eventImage"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/eventImage">
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccent"
+        android:paddingTop="15dp" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="141dp"
-            android:layout_height="match_parent"
-            android:weightSum="1">
+    <TextView
+        android:text="Price"
+        android:layout_width="100dp"
+        android:id="@+id/eventPrice"
+        android:layout_height="50dp"
+        android:layout_below="@+id/eventTitle"
+        android:layout_toEndOf="@+id/eventDate"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_green_light"
+        android:paddingTop="15dp" />
 
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_weight="0.35"
-                android:layout_height="80px"
-                android:id="@+id/eventDate" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:id="@+id/eventPrice"
-                android:layout_weight="0.32"
-                android:layout_height="80px" />
-        </LinearLayout>
-
-        <Button
-            android:text="Button"
+    <Button
+            android:text="Join"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/eventJoin"
-            android:layout_weight="1" />
-
-    </LinearLayout>
+        android:id="@+id/eventJoin"
+        android:layout_height="50dp"
+        android:layout_below="@+id/eventTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/eventPrice"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>

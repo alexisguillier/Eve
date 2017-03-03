@@ -24,6 +24,8 @@ public class EventsActivity extends AppCompatActivity {
     List<Event> events;
     ListView eventsContainer;
 
+    List<Participation> participations;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +44,10 @@ public class EventsActivity extends AppCompatActivity {
 
         logoutButton= (Button) findViewById(R.id.eventslogout);
         eventsContainer = (ListView)  findViewById(R.id.eventsContainer);
+        events = Event.find(Event.class, "is_Active = ?", "1");
 
-        //events = Event.find(Event.class, "isActive = ?", "true");
-/*
         if(events.size() > 0){
-            ArrayAdapter<Event> adapter = new ArrayAdapter<Event>(this, 0, events);
+            EventArrayAdapter adapter = new EventArrayAdapter(this, events);
             eventsContainer.setAdapter(adapter);
         } else {
             Context context = getApplicationContext();
@@ -55,7 +56,7 @@ public class EventsActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-*/
+
         accountButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent myIntent = new Intent(getApplicationContext(), AccountActivity.class);
@@ -72,9 +73,6 @@ public class EventsActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
 
 
         logoutButton.setOnClickListener(new View.OnClickListener() {

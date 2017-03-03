@@ -52,6 +52,9 @@ public class AccountActivity extends AppCompatActivity {
             firstNameAccount.setText(user.getFirstName());
             secondNameAccount.setText(user.getLastName());
             mailAccount.setText(user.getEmail());
+            passwordAccount.setText(user.getPassword());
+            passwordConfirmAccount.setText(user.getPassword());
+            accountStatus.setSelection(user.getStatus());
         }
 
         updateAccountButton.setOnClickListener(new View.OnClickListener() {

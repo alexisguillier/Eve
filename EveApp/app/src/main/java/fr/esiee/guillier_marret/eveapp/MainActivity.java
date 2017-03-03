@@ -1,5 +1,11 @@
 package fr.esiee.guillier_marret.eveapp;
 
+
+import com.orm.SchemaGenerator;
+import com.orm.SugarContext;
+import com.orm.SugarDb;
+import com.orm.SugarRecord;
+
         import android.content.Context;
         import android.content.Intent;
         import android.content.SyncStatusObserver;
@@ -25,14 +31,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+//Clear and recreate database
+/*
+        SugarContext.terminate();
+        SchemaGenerator schemaGenerator = new SchemaGenerator(getApplicationContext());
+        schemaGenerator.deleteTables(new SugarDb(getApplicationContext()).getDB());
+        SugarContext.init(getApplicationContext());
+        schemaGenerator.createDatabase(new SugarDb(getApplicationContext()).getDB());
+*/
+
         session = new Session(getApplicationContext());
-        /*
-        if(session.isLoggedIn()){
+
+/*
+        if(session.isLoggedIn() ){
             Intent myIntent = new Intent(getApplicationContext(), EventsActivity.class);
             startActivity(myIntent);
             finish();
         }
-        */
+*/
+
         submitButton = (Button) findViewById(R.id.submit);
         signupButton = (Button) findViewById(R.id.signup);
         id= (EditText) findViewById(R.id.idfield);
@@ -50,9 +69,11 @@ public class MainActivity extends AppCompatActivity {
                         User u = users.get(0);
                         text = "Connected";
                         session.createSession(u.getId(), u.getFirstName(), u.getLastName());
+
                         Intent myIntent = new Intent(getApplicationContext(), EventsActivity.class);
                         startActivity(myIntent);
                         finish();
+
                     } else {
                         text = "Account not found";
                     }

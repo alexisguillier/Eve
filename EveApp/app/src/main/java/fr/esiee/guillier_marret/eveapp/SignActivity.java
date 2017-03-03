@@ -28,12 +28,9 @@ public class SignActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
-
         session = new Session(getApplicationContext());
-
         returnButton = (Button) findViewById(R.id.returnBtn);
         signButton = (Button) findViewById(R.id.sign);
         firstName = (EditText) findViewById(R.id.firstName);
@@ -46,20 +43,19 @@ public class SignActivity extends AppCompatActivity {
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         status.setAdapter(spinnerArrayAdapter);
 
-
         signButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Context context = getApplicationContext();
                 CharSequence text = "";
                 int duration = Toast.LENGTH_SHORT;
-                if(firstName.toString().trim().length() == 0 || secondName.toString().trim().length() == 0 || mail.toString().trim().length() == 0 || password.toString().trim().length() == 0) {
+                if(firstName.getText().toString().trim().length() == 0 || secondName.getText().toString().trim().length() == 0 || mail.getText().toString().trim().length() == 0 || password.getText().toString().trim().length() == 0) {
                     text = "Fill all the fields";
                 } else{
                     List<User> users = User.find(User.class, "email = ?", mail.getText().toString());
                     if(users.size() > 0){
                         text = "Mail already used";
                     } else{
-                        User u = new User(firstName.toString(), secondName.toString(), false, mail.toString(), password.toString(), status.getSelectedItemPosition());
+                        User u = new User(firstName.getText().toString(), secondName.getText().toString(), false, mail.getText().toString(), password.getText().toString(), status.getSelectedItemPosition());
                         u.save();
                         text = "Account created";
                         session.createSession(u.getId(), u.getFirstName(), u.getLastName());

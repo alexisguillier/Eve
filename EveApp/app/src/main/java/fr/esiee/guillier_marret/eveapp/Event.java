@@ -11,18 +11,21 @@ import java.util.Date;
 public class Event extends SugarRecord {
 
     private String name;
-    private Date date;
+    private String description;
+    private String location;
+    private String date;
     private int maxTickets;
     private double price;
     private double priceNonContributor;
-    private String description;
+
     private boolean isActive;
+
 
     public Event(){
 
     }
 
-    public Event(String n, Date d, int mt, double p, double pnc, String desc) {
+    public Event(String n, String d, int mt, double p, double pnc, String desc) {
         this.name = n;
         this.date = d;
         this.maxTickets = mt;
@@ -41,11 +44,20 @@ public class Event extends SugarRecord {
         return this.name;
     }
 
-    public void setDate(Date d)
+    public void setLocation(String l)
+    {
+        this.location = l;
+    }
+    public String getLocation()
+    {
+        return this.location;
+    }
+
+    public void setDate(String d)
     {
         this.date = d;
     }
-    public Date getDate()
+    public String getDate()
     {
         return this.date;
     }
