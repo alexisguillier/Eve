@@ -18,6 +18,10 @@ public class Event extends SugarRecord {
     private String description;
     private boolean isActive;
 
+    public Event(){
+
+    }
+
     public Event(String n, Date d, int mt, double p, double pnc, String desc) {
         this.name = n;
         this.date = d;
